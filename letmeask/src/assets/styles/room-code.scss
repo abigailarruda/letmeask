@@ -1,0 +1,48 @@
+@use "../utilities/colors" as *;
+@use "../utilities/breakpoints" as *;
+
+.room-code {
+  height: 2.5rem;
+
+  border-radius: 0.5rem;
+  border: 1px solid $purple;
+
+  overflow: hidden;
+
+  background-color: $white;
+
+  cursor: pointer;
+
+  display: flex;
+
+  div {
+    height: 100%;
+
+    background-color: $purple;
+
+    padding: 0 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: $sm) {
+      padding: 0 0.5rem;
+    }
+  }
+
+  span {
+    display: block;
+
+    align-self: center;
+    flex: 1;
+
+    padding: 0 1rem;
+
+    font-size: 0.875rem;
+
+    @media (max-width: $sm) {
+      padding: 0 0.5rem;
+    }
+  }
+}

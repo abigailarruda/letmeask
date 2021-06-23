@@ -1,0 +1,125 @@
+@use "../utilities/colors" as *;
+@use "../utilities/breakpoints" as *;
+
+#page-room {
+  header {
+    padding: 1.5rem;
+
+    border-bottom: 1px solid #e2e2e2;
+
+    .content {
+      max-width: 70rem;
+
+      margin: 0 auto;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      > a img {
+        max-height: 3rem;
+      }
+    }
+  }
+
+  main {
+    max-width: 50rem;
+
+    margin: 0 auto;
+
+    @media (max-width: $sm) {
+      padding: 0 2rem;
+    }
+
+    .room-title {
+      margin: 2rem 0 2rem;
+
+      display: flex;
+      align-items: center;
+
+      h1 {
+        font-family: Poppins, sans-serif;
+        font-size: 1.5rem;
+        color: $black;
+      }
+
+      span {
+        margin-left: 1rem;
+        padding: 0.5rem 1rem;
+
+        background-color: $pink-dark;
+
+        border-radius: 9999px;
+
+        color: $white;
+        font-weight: 500;
+        font-size: 0.875rem;
+      }
+    }
+
+    form {
+      textarea {
+        width: 100%;
+
+        border: 0;
+        border-radius: 0.5rem;
+
+        padding: 1rem;
+
+        background-color: $white-details;
+
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+
+        resize: vertical;
+
+        min-height: 8rem;
+      }
+
+      .form-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        margin-top: 1rem;
+
+        .user-info {
+          display: flex;
+          align-items: center;
+
+          img {
+            width: 2rem;
+
+            border-radius: 100%;
+          }
+
+          span {
+            margin-left: 0.5rem;
+
+            color: $black;
+            font-weight: 500 !important;
+            font-size: 0.875rem;
+          }
+        }
+
+        > span {
+          font-size: 0.875rem;
+          color: $gray-medium;
+          font-weight: 500 !important;
+
+          button {
+            background: transparent;
+
+            border: 0;
+
+            font-size: 0.875rem;
+            color: $purple;
+            font-weight: 500 !important;
+            text-decoration: underline;
+
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
