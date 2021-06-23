@@ -1,0 +1,181 @@
+@use "../utilities/colors" as *;
+@use "../utilities/breakpoints" as *;
+
+#page-auth {
+  height: 100vh;
+
+  display: flex;
+  align-items: stretch;
+
+  @media (max-width: $sm) {
+    flex-direction: column;
+  }
+
+  aside {
+    flex: 7;
+
+    background: $purple;
+
+    color: $white !important;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 7.5rem 5rem;
+
+    img {
+      max-width: 20rem;
+    }
+
+    strong {
+      font: 700 2rem Poppins, sans-serif;
+      line-height: 3rem;
+
+      margin-top: 1rem;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.5rem;
+      color: $white-background;
+    }
+
+    @media (max-width: $sm) {
+      order: 2;
+    }
+  }
+
+  main {
+    flex: 8;
+
+    padding: 4rem 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    width: 100%;
+    max-width: 20rem;
+
+    text-align: center;
+
+    > img {
+      align-self: center;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+
+      margin: 4rem 0 2rem;
+
+      font-family: Poppins, sans-serif;
+    }
+
+    form {
+      input {
+        height: 3rem;
+
+        padding: 0 1rem;
+
+        background-color: $white;
+
+        border: 1px solid $gray-medium;
+        border-radius: 0.5rem;
+
+        color: $gray-dark;
+      }
+
+      button {
+        margin-top: 1rem;
+      }
+
+      button,
+      input {
+        width: 100%;
+      }
+    }
+
+    p {
+      font-size: 0.875rem;
+      color: $gray-medium;
+
+      margin-top: 1rem;
+
+      a {
+        color: $pink-dark;
+      }
+    }
+  }
+
+  .create-room {
+    margin-top: 4rem;
+
+    height: 3rem;
+
+    background-color: $white;
+
+    border-radius: 0.5rem;
+    border: 1px solid $gray-medium;
+
+    color: $gray-dark;
+    font-weight: 500;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      border: 1px solid $gray-dark;
+
+      transition: all 0.2s ease-in-out;
+    }
+
+    img {
+      margin-right: 0.5rem;
+
+      width: 1rem;
+    }
+  }
+
+  .separator {
+    font-size: 0.875rem;
+    color: $gray-medium;
+
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+
+    &::before {
+      content: "";
+
+      flex: 1;
+
+      height: 1px;
+
+      background-color: $gray-medium;
+
+      margin-right: 1rem;
+    }
+
+    &::after {
+      content: "";
+
+      flex: 1;
+
+      height: 1px;
+
+      background-color: $gray-medium;
+
+      margin-left: 1rem;
+    }
+  }
+}
