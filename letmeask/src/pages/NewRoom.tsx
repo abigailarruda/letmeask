@@ -4,7 +4,7 @@ import { Link, useHistory } from "react-router-dom";
 
 import { database } from "../services/firebase";
 
-import { useAuth } from "../hooks/useAuth";
+import useAuth from "../hooks/useAuth";
 
 import Button from "../components/Button";
 

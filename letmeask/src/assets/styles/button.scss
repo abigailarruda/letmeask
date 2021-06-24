@@ -20,6 +20,24 @@
 
   transition: all 0.2s ease-in-out;
 
+  &.outlined {
+    background-color: $white;
+
+    border: 1px solid $purple;
+
+    color: $purple;
+
+    &:not(:disabled):hover {
+      background-color: $white;
+
+      color: $purple-hover;
+
+      border-color: $purple-hover;
+
+      transition: all 0.2s ease-in-out;
+    }
+  }
+
   &:not(:disabled):hover {
     background-color: $purple-hover;
 

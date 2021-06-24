@@ -1,0 +1,77 @@
+@use "../utilities/colors" as *;
+@use "../utilities/breakpoints" as *;
+
+.question {
+  background-color: $white-details;
+
+  border-radius: 0.5rem;
+
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+
+  padding: 1.5rem;
+
+  & + .question {
+    margin-top: 1.5rem;
+  }
+
+  p {
+    color: $black;
+  }
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 1.5rem;
+
+    .user-info {
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 2rem;
+
+        border-radius: 100%;
+      }
+
+      span {
+        margin-left: 0.5rem;
+
+        color: $gray-dark;
+        font-size: 0.875rem;
+      }
+    }
+
+    button {
+      border: 0;
+
+      background: transparent;
+
+      transition: all 0.2s ease-in-out;
+
+      &.like-button {
+        display: flex;
+        align-items: flex-end;
+
+        color: $gray-dark;
+
+        gap: 0.5rem;
+
+        &.liked {
+          color: $purple;
+
+          svg path {
+            stroke: $purple;
+          }
+        }
+      }
+
+      &:hover {
+        transition: all 0.2s ease-in-out;
+
+        filter: brightness(0.8);
+      }
+    }
+  }
+}
