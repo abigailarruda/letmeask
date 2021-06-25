@@ -1,6 +1,6 @@
 import { FormEvent, useState } from "react";
 
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import useAuth from "../hooks/useAuth";
 import useRoom from "../hooks/useRoom";
@@ -74,9 +74,7 @@ export default function Room() {
     <div id="page-room">
       <header>
         <div className="content">
-          <Link to="/">
-            <img src={logoImage} alt="Let Me Ask" />
-          </Link>
+          <img src={logoImage} alt="Let Me Ask" />
 
           <RoomCode code={roomId} />
         </div>
@@ -84,8 +82,7 @@ export default function Room() {
 
       <main>
         <div className="room-title">
-          <h1>Sala {title}</h1>
-
+          <h1>{title}</h1>
           {questions.length > 0 && <span>{questions.length} pergunta(s)</span>}
         </div>
 

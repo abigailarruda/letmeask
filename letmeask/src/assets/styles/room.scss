@@ -7,7 +7,9 @@
   header {
     padding: 1.5rem;
 
-    border-bottom: 1px solid #e2e2e2;
+    border-bottom: 1px solid $gray-light;
+
+    background-color: $white;
 
     .content {
       max-width: 70rem;
@@ -18,8 +20,16 @@
       justify-content: space-between;
       align-items: center;
 
-      > a img {
+      @media (max-width: $sm) {
+        justify-content: center;
+      }
+
+      > img {
         max-height: 3rem;
+
+        @media (max-width: $sm) {
+          display: none !important;
+        }
       }
     }
 
@@ -57,9 +67,11 @@
 
       span {
         margin-left: 1rem;
-        padding: 0.5rem 1rem;
+        padding: 0.25rem 1rem;
 
-        background-color: $pink-dark;
+        background-color: $blue;
+
+        user-select: none;
 
         border-radius: 9999px;
 
@@ -73,18 +85,21 @@
       textarea {
         width: 100%;
 
-        border: 0;
-        border-radius: 0.5rem;
+        padding: 1.5rem;
 
-        padding: 1rem;
+        background-color: $white;
 
-        background-color: $white-details;
+        border-radius: 0.25rem;
+        border: 1px solid $gray-light;
 
-        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+        color: $gray-dark;
 
         resize: vertical;
-
         min-height: 8rem;
+
+        &::placeholder {
+          color: $gray-dark;
+        }
       }
 
       .form-footer {
@@ -101,22 +116,22 @@
           img {
             width: 2rem;
 
-            border-radius: 100%;
+            border-radius: 0.25rem;
           }
 
           span {
             margin-left: 0.5rem;
 
-            color: $black;
-            font-weight: 500 !important;
+            color: $gray-dark;
+            font-weight: 600;
             font-size: 0.875rem;
           }
         }
 
         > span {
           font-size: 0.875rem;
-          color: $gray-medium;
-          font-weight: 500 !important;
+          color: $gray-dark;
+          font-weight: 400;
 
           button {
             background: transparent;
@@ -124,9 +139,8 @@
             border: 0;
 
             font-size: 0.875rem;
-            color: $purple;
-            font-weight: 500 !important;
-            text-decoration: underline;
+            color: $blue;
+            font-weight: 600;
 
             cursor: pointer;
           }

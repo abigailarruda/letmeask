@@ -1,30 +1,20 @@
-$gray-dark: #737380;
-$gray-medium: #a8a8b3;
-$gray-medium-hover: #7e7e86;
-$gray-light: #dbdcdd;
-$gray-light-hover: #cecece;
+$black: #1f2d3d;
 
 $white: #ffffff;
-$white-background: #f8f8f8;
-$white-details: #fefefe;
+$white-medium: #e5e9f2;
+$white-light: #f9fafc;
 
-$pink-dark: #e559f9;
-$pink-light: #d67ee2;
+$gray-dark: #8492a6;
+$gray-medium: #c0ccda;
+$gray-light: #d3dce6;
 
-$purple: #835afd;
-$purple-hover: #6f4bd8;
+$blue: #2e2efd;
 
-$danger: #e73f5d;
-$danger-hover: #d73754;
+$aqua: #00daf9;
+$aqua-light: #eefdff;
 
-$black: #29292e;
-
-$shadow: #050206;
-
-@mixin purple-gradient($attribute) {
-  #{$attribute}: -webkit-linear-gradient(139.44deg, #485bff 0%, #ff59f8 96.19%);
-  #{$attribute}: -moz-linear-gradient(139.44deg, #485bff 0%, #ff59f8 96.19%);
-  #{$attribute}: -ms-linear-gradient(139.44deg, #485bff 0%, #ff59f8 96.19%);
-  #{$attribute}: -o-linear-gradient(139.44deg, #485bff 0%, #ff59f8 96.19%);
-  #{$attribute}: linear-gradient(139.44deg, #485bff 0%, #ff59f8 96.19%);
+@mixin gradient($attribute) {
+  #{$attribute}: $blue;
+  #{$attribute}: -webkit-linear-gradient(to right, $blue, $aqua);
+  #{$attribute}: linear-gradient(to right, $blue, $aqua);
 }

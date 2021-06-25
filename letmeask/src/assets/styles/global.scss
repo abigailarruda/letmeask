@@ -3,8 +3,8 @@
 
 :root,
 html {
-  font: 400 16px Roboto;
-  background-color: $white-background;
+  font: 400 16px Open Sans;
+  background-color: $white-light;
 }
 
 @media (max-width: $lg) {
@@ -53,12 +53,14 @@ body,
 input,
 button,
 textarea {
-  font: 400 1rem Roboto;
+  font: 400 1rem Open Sans;
   color: $black;
 }
 
 button {
   cursor: pointer;
+
+  user-select: none;
 }
 
 a {

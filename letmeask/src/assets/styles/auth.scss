@@ -6,15 +6,22 @@
 
   display: flex;
   align-items: stretch;
+  gap: 2rem;
+
+  @include gradient(background);
+
+  padding: 2rem;
 
   @media (max-width: $sm) {
     flex-direction: column;
   }
 
   aside {
-    flex: 7;
+    @media (max-width: $sm) {
+      display: none;
+    }
 
-    background: $purple;
+    flex: 10;
 
     color: $white !important;
 
@@ -38,7 +45,7 @@
     p {
       font-size: 1rem;
       line-height: 1.5rem;
-      color: $white-background;
+      color: $gray-light;
     }
 
     @media (max-width: $sm) {
@@ -50,6 +57,10 @@
     flex: 8;
 
     padding: 4rem 2rem;
+
+    background-color: $white;
+
+    border-radius: 0.5rem;
 
     display: flex;
     align-items: center;
@@ -68,6 +79,8 @@
 
     > img {
       align-self: center;
+
+      max-height: 5rem;
     }
 
     h2 {
@@ -87,9 +100,13 @@
         background-color: $white;
 
         border: 1px solid $gray-medium;
-        border-radius: 0.5rem;
+        border-radius: 0.25rem;
 
         color: $gray-dark;
+
+        &::placeholder {
+          color: $gray-dark;
+        }
       }
 
       button {
@@ -104,12 +121,13 @@
 
     p {
       font-size: 0.875rem;
-      color: $gray-medium;
+      color: $gray-dark;
 
       margin-top: 1rem;
 
       a {
-        color: $pink-dark;
+        font-weight: 600;
+        color: $blue;
       }
     }
   }
@@ -121,11 +139,11 @@
 
     background-color: $white;
 
-    border-radius: 0.5rem;
+    border-radius: 0.25rem;
     border: 1px solid $gray-medium;
 
     color: $gray-dark;
-    font-weight: 500;
+    font-weight: 600;
 
     display: flex;
     justify-content: center;

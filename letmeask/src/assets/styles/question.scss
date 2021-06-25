@@ -2,11 +2,10 @@
 @use "../utilities/breakpoints" as *;
 
 .question {
-  background-color: $white-details;
+  background-color: $white;
 
-  border-radius: 0.5rem;
-
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  border-radius: 0.25rem;
+  border: 1px solid $gray-light;
 
   padding: 1.5rem;
 
@@ -15,9 +14,9 @@
   }
 
   &.highlighted {
-    background-color: #f4f0ff;
+    background-color: $aqua-light;
 
-    border: 1px solid $purple;
+    border: 1px solid $aqua;
 
     footer .user-info span {
       color: $black;
@@ -26,6 +25,10 @@
 
   &.answered {
     background-color: $gray-light;
+
+    p {
+      color: $gray-dark !important;
+    }
 
     footer .user-info img {
       filter: grayscale(1);
@@ -50,7 +53,7 @@
       img {
         width: 2rem;
 
-        border-radius: 100%;
+        border-radius: 0.25rem;
       }
 
       span {
@@ -83,10 +86,10 @@
         gap: 0.5rem;
 
         &.liked {
-          color: $purple;
+          color: $blue;
 
           svg path {
-            stroke: $purple;
+            stroke: $blue;
           }
         }
       }

@@ -1,4 +1,4 @@
-import { Link, useHistory, useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 
 import { database } from "../services/firebase";
 
@@ -58,9 +58,7 @@ export default function AdminRoom() {
     <div id="page-room">
       <header>
         <div className="content">
-          <Link to="/">
-            <img src={logoImage} alt="Let Me Ask" />
-          </Link>
+          <img src={logoImage} alt="Let Me Ask" />
 
           <div>
             <RoomCode code={roomId} />

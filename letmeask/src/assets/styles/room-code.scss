@@ -4,45 +4,26 @@
 .room-code {
   height: 2.5rem;
 
-  border-radius: 0.5rem;
-  border: 1px solid $purple;
+  padding: 0.25rem 0.5rem;
+
+  border-radius: 0.25rem;
+  border: 2px solid $blue;
 
   overflow: hidden;
+  text-overflow: ellipsis;
 
   background-color: $white;
 
   cursor: pointer;
 
   display: flex;
-
-  div {
-    height: 100%;
-
-    background-color: $purple;
-
-    padding: 0 1rem;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    @media (max-width: $sm) {
-      padding: 0 0.5rem;
-    }
-  }
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 
   span {
-    display: block;
-
-    align-self: center;
-    flex: 1;
-
-    padding: 0 1rem;
-
-    font-size: 0.875rem;
-
-    @media (max-width: $sm) {
-      padding: 0 0.5rem;
-    }
+    font-size: 1rem;
+    color: $blue;
+    white-space: nowrap;
   }
 }
