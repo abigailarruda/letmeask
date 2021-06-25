@@ -12,6 +12,7 @@ import logoImage from "../assets/images/logo.svg";
 import deleteImage from "../assets/images/delete.svg";
 import checkImage from "../assets/images/check.svg";
 import answerImage from "../assets/images/answer.svg";
+import emptyQuestionsImage from "../assets/images/empty-questions.svg";
 
 import "../assets/styles/room.scss";
 
@@ -72,51 +73,64 @@ export default function AdminRoom() {
 
       <main>
         <div className="room-title">
-          <h1>Sala {title}</h1>
+          <h1>{title}</h1>
 
           {questions.length > 0 && <span>{questions.length} pergunta(s)</span>}
         </div>
 
         <div className="question-list">
-          {questions.map((question) => {
-            return (
-              <Question
-                key={question.id}
-                content={question.content}
-                author={question.author}
-                isHightlighted={question.isHightlighted}
-                isAnswered={question.isAnswered}
-              >
-                {!question.isAnswered && (
-                  <>
-                    <button
-                      type="button"
-                      onClick={() => handleCheckQuestionAsAnswered(question.id)}
-                    >
-                      <img
-                        src={checkImage}
-                        alt="Marcar pergunta como respondida"
-                      />
-                    </button>
-
-                    <button
-                      type="button"
-                      onClick={() => handleHighlighQuestion(question.id)}
-                    >
-                      <img src={answerImage} alt="Dar destaque à pergunta" />
-                    </button>
-                  </>
-                )}
-
-                <button
-                  type="button"
-                  onClick={() => handleDeleteQuestion(question.id)}
+          {questions.length === 0 && (
+            <div className="empty-questions">
+              <img src={emptyQuestionsImage} alt="Não há perguntas" />
+              <h3>Nenhuma pergunta por aqui...</h3>
+              <p>
+                Envie o código desta sala para seus amigos e comece a responder
+                perguntas!
+              </p>
+            </div>
+          )}
+          {questions.length > 0 &&
+            questions.map((question) => {
+              return (
+                <Question
+                  key={question.id}
+                  content={question.content}
+                  author={question.author}
+                  isHightlighted={question.isHightlighted}
+                  isAnswered={question.isAnswered}
                 >
-                  <img src={deleteImage} alt="Remover pergunta" />
-                </button>
-              </Question>
-            );
-          })}
+                  {!question.isAnswered && (
+                    <>
+                      <button
+                        type="button"
+                        onClick={() =>
+                          handleCheckQuestionAsAnswered(question.id)
+                        }
+                      >
+                        <img
+                          src={checkImage}
+                          alt="Marcar pergunta como respondida"
+                        />
+                      </button>
+
+                      <button
+                        type="button"
+                        onClick={() => handleHighlighQuestion(question.id)}
+                      >
+                        <img src={answerImage} alt="Dar destaque à pergunta" />
+                      </button>
+                    </>
+                  )}
+
+                  <button
+                    type="button"
+                    onClick={() => handleDeleteQuestion(question.id)}
+                  >
+                    <img src={deleteImage} alt="Remover pergunta" />
+                  </button>
+                </Question>
+              );
+            })}
         </div>
       </main>
     </div>

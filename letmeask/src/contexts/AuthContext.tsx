@@ -31,7 +31,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
       const { displayName, photoURL, uid } = result.user;
 
       if (!displayName || !photoURL) {
-        throw new Error("Missing information from Google Account");
+        throw new Error("A conta escolhida não possui avatar e/ou nome");
       }
 
       setUser({
